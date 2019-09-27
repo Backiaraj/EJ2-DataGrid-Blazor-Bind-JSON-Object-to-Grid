@@ -1,0 +1,25 @@
+﻿@page "/"
+
+@using Microsoft.JSInterop
+@using Syncfusion.EJ2.Blazor.Grids
+@using Newtonsoft.Json
+
+<EjsGrid DataSource="@model" AllowPaging="true">
+    <GridPageSettings PageSize="2"></GridPageSettings>
+    <GridColumns>
+        <GridColumn Field="OrderID" HeaderText="OrderID" Format="C2" TextAlign="TextAlign.Right" Width="120"></GridColumn>
+        <GridColumn Field="First Name" HeaderText="First Name" Format="C2" TextAlign="TextAlign.Right" Width="120"></GridColumn>
+        <GridColumn Field="Last Name" HeaderText="First Name" Format="C2" TextAlign="TextAlign.Right" Width="120"></GridColumn>
+    </GridColumns>
+</EjsGrid>
+
+@code{
+    public IEnumerable<object> model;
+    protected override void OnInitialized()
+    {
+        string myDynamicJSON = "[{'OrderID':'1001','First Name':'VINET','Last Name':'Jordan'},{'OrderID':'1002','First Name':'HANAR','Last Name':'McLite'},{'OrderID':'1003','First Name':'ANATR','Last Name':'Picaso'}]";
+        this.model = (IEnumerable<object>)JsonConvert.DeserializeObject(myDynamicJSON);
+    }
+}
+
+
