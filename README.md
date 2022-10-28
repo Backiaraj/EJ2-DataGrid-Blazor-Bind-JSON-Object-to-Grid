@@ -1,6 +1,6 @@
 # Blazor DataGrid - Bind JSON Object to Grid
 
-This example shows how to bind an array of JSON objects to Syncfusion Blazor Grid.
+This example shows how to bind an array of JSON objects to Syncfusion Blazor DataGrid.
 
 ## Prerequisites
 
